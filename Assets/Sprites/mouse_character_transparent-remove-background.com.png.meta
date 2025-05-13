@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e7452a1f1e7732343b8d5fa6ab73b997
+guid: db319c2a39f884141bf709ea442ef80f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6766049170677070453
-    second: MousePlayerIdle_0
+      213: -4683948782634769214
+    second: mouse_character_transparent-remove-background.com_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -56,7 +56,7 @@ TextureImporter:
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
+  spriteTessellationDetail: 0
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MousePlayerIdle_0
+      name: mouse_character_transparent-remove-background.com_0
       rect:
         serializedVersion: 2
-        x: 290
-        y: 174
-        width: 425
-        height: 663
+        x: 0
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,18 +115,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b8587f8902a2a12a0800000000000000
-      internalID: -6766049170677070453
+      spriteID: 2c46ee816654ffeb0800000000000000
+      internalID: -4683948782634769214
       vertices: []
       indices: 
       edges: []
       weights: []
     outline: []
     customData: 
-    physicsShape: []
+    physicsShape:
+    - - {x: 153, y: -369}
+      - {x: 174, y: -318}
+      - {x: 174, y: -222}
+      - {x: 192, y: -221.15625}
+      - {x: 192, y: -186}
+      - {x: 191, y: -146}
+      - {x: 175, y: -146}
+      - {x: 173, y: -70}
+      - {x: 154, y: -68}
+      - {x: 152, y: 12}
+      - {x: 195, y: 75}
+      - {x: 191.05457, y: 106.383545}
+      - {x: 142, y: 161}
+      - {x: 173, y: 250}
+      - {x: 174, y: 331}
+      - {x: 156, y: 352}
+      - {x: 135, y: 369}
+      - {x: 78.05383, y: 369}
+      - {x: -11, y: 314}
+      - {x: -100.64212, y: 369}
+      - {x: -187, y: 369}
+      - {x: -218, y: 346}
+      - {x: -249, y: 303}
+      - {x: -247, y: 206}
+      - {x: -175, y: 148}
+      - {x: -194, y: 104}
+      - {x: -180, y: 58}
+      - {x: -244, y: -87}
+      - {x: -244, y: -150}
+      - {x: -204, y: -236}
+      - {x: -206, y: -317}
+      - {x: -162, y: -349}
+      - {x: -161, y: -408}
+      - {x: 152, y: -409}
     bones: []
-    spriteID: ca102171c0a445247b1424a739b96ac9
-    internalID: 0
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
@@ -135,7 +169,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MousePlayerIdle_0: -6766049170677070453
+      mouse_character_transparent-remove-background.com_0: -4683948782634769214
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
