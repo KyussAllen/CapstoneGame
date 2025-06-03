@@ -4,14 +4,20 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Jump Tuning")]
-    public float fallMultiplier = 2.5f;
-    public float lowJumpMultiplier = 2f;
+    public float fallMultiplier = 3f;
+    public float lowJumpMultiplier = 4f;
 
     [Header("Movement Settings")]
     public float moveSpeed = 5f;
-    public float jumpForce = 10f;
+    public float jumpForce = 12f;
     private bool isFacingRight = true;
 
+    [Header("Advanced Jump Settings")]
+    public float coyoteTime = 0.2f; // WileyCoyote type jump 
+    private float coyoteTimeCounter;
+
+    public float jumpBufferTime = 0.2f; // Jump input memory
+    private float jumpBufferCounter;
 
 
     [Header("Combat Settings")]
@@ -22,9 +28,13 @@ public class PlayerController : MonoBehaviour
     public float attackRate = 2f;
     private float nextAttackTime = 0f;
 
+    [Header("Ground Check")]
+    public Transform groundCheck;
+    public float groundCheckRadius = 0.2f;
+    public LayerMask groundLayer;
+    private bool isGrounded;
 
     private Rigidbody2D rb;
-    private bool isGrounded;
 
 
     void Flip()
@@ -46,9 +56,15 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        Move();
-        Jump();
-        BetterJump();
+        if (Input.GetButtonDown("Jump"))
+        {
+            jumpBufferCounter = jumpBufferTime;
+        }
+        else
+        {
+            jumpBufferCounter -= Time.deltaTime;
+        }
+
         float horizontal = Input.GetAxisRaw("Horizontal");
         if (Time.time >= nextAttackTime)
         {
@@ -66,8 +82,16 @@ public class PlayerController : MonoBehaviour
         {
             Flip();
         }
-  
 
+
+    }
+    void FixedUpdate()
+    {
+        CheckGrounded();
+        Move();
+        Jump();
+        HandleJumpInput();
+        BetterJump();
     }
 
 
@@ -84,31 +108,48 @@ public class PlayerController : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
     }
+
     void BetterJump()
     {
         if (rb.linearVelocity.y < 0)
         {
-            // Falling
-            rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+            rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.fixedDeltaTime;
         }
         else if (rb.linearVelocity.y > 0 && !Input.GetButton("Jump"))
         {
-            // Jumping but player let go of jump button, aka short hops
-            rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+            rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.fixedDeltaTime;
+        }
+    }
+    void HandleJumpInput()
+    {
+        // Count down coyote time when in air
+        if (isGrounded)
+        {
+            coyoteTimeCounter = coyoteTime;
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.fixedDeltaTime;
+        }
+
+        if (jumpBufferCounter > 0 && coyoteTimeCounter > 0)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            jumpBufferCounter = 0f; // Reset buffer after jump
         }
     }
 
-    public float rotationSpeed = 10f; 
+    public float rotationSpeed = 10f;
 
-   /* 
-      private void FixedUpdate()
-    {
-        // Keep feet pointing down
-        Vector3 groundDirection = Vector3.down;
-        Quaternion targetRotation = Quaternion.LookRotation(groundDirection, transform.up);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-    }
-    */
+    /* 
+       private void FixedUpdate()
+     {
+         // Keep feet pointing down
+         Vector3 groundDirection = Vector3.down;
+         Quaternion targetRotation = Quaternion.LookRotation(groundDirection, transform.up);
+         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+     }
+     */
     void Attack()
     {
         //Add attavk animation here Kyuss
@@ -130,17 +171,18 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void CheckGrounded()
     {
-        // Check ground collision
-        if (collision.contacts[0].normal.y > 0.5f)
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        if (groundCheck != null)
         {
-            isGrounded = true;
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        isGrounded = false;
-    }
 }

@@ -1,18 +1,20 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using static System.Net.Mime.MediaTypeNames;
 
 public class HealthBar : MonoBehaviour
 {
-    public UnityEngine.UI.Image fillImage;
+    public Slider slider;
 
-    public void SetMaxHealth(float maxHealth)
+    public void SetMaxHealth(int health)
     {
-        fillImage.fillAmount = 1f; // Full health
+        slider.maxValue = health;
+        slider.value = health; 
     }
 
-    public void SetHealth(float currentHealth, float maxHealth)
+    public void SetHealth(int health)
     {
-        fillImage.fillAmount = currentHealth / maxHealth;
+        slider.value = health;
     }
 }

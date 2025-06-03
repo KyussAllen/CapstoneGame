@@ -19,7 +19,7 @@ public class Enemy :  MonoBehaviour
 
 public class EnemyContactDamage : MonoBehaviour
 {
-    public int damageAmount = 1;
+    public int damageAmount = 10;
     public Transform frontCheck;
     public float frontRange = 0.5f;
     public LayerMask playerLayer;

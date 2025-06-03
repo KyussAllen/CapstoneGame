@@ -5,20 +5,19 @@ using System.Diagnostics;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int maxHealth = 5;
+    public int maxHealth = 100;
     private int currentHealth;
     private SpriteRenderer spriteRenderer;
     public float damageCooldown = 1f;
     private float lastDamageTime = -999f;
-    public HealthBar healthBar;
-
     private PlayerHealth playerHealth;
+    public HealthBar healthBar;
 
     void Start()
     {
         currentHealth = maxHealth;
-        spriteRenderer = GetComponent<SpriteRenderer>();
         healthBar.SetMaxHealth(maxHealth);
+        spriteRenderer = GetComponent<SpriteRenderer>();
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 
         if (player == null)
@@ -36,9 +35,7 @@ public class PlayerHealth : MonoBehaviour
     }
 
 
-  
-
-    public void TakeDamage(int amount)
+    public void TakeDamage(int damage)
     {
 
         if (Time.time - lastDamageTime < damageCooldown)
@@ -46,10 +43,9 @@ public class PlayerHealth : MonoBehaviour
 
         lastDamageTime = Time.time;
 
-        currentHealth -= amount;
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
         StartCoroutine(FlashRed());
-        healthBar.SetHealth(currentHealth, maxHealth);
-
         if (currentHealth <= 0)
         {
             Die();
@@ -67,6 +63,6 @@ public class PlayerHealth : MonoBehaviour
     private void Die()
     {
         UnityEngine.Debug.Log("Player Died!");
-        // Add death behavior 
+      
     }
 }
