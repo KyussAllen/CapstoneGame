@@ -1,5 +1,8 @@
+using System.ComponentModel;
 using System.Diagnostics;
+using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
@@ -34,6 +37,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
     private bool isGrounded;
 
+
     private Rigidbody2D rb;
 
 
@@ -41,9 +45,7 @@ public class PlayerController : MonoBehaviour
     {
         isFacingRight = !isFacingRight;
 
-        Vector3 localScale = transform.localScale;
-        localScale.x = Mathf.Abs(localScale.x) * (isFacingRight ? 1 : -1);
-        transform.localScale = localScale;
+        transform.Rotate(0f, 180f, 0f);
     }
 
 
@@ -52,7 +54,10 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
     }
+
+
 
     void Update()
     {

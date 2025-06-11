@@ -1,10 +1,28 @@
 fileFormatVersion: 2
-guid: 5ab1af7a527c60045a8e0b37e352ae97
+guid: c4f8dc29e4c244e439221832cd58bf66
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7860757473420747199
-    second: RatWalker_0
+      213: -3663868441188573603
+    second: BulletImpactSpriteSheet_0
+  - first:
+      213: -9090565256895923634
+    second: BulletImpactSpriteSheet_1
+  - first:
+      213: -7199906527444922728
+    second: BulletImpactSpriteSheet_2
+  - first:
+      213: -1632980586207039192
+    second: BulletImpactSpriteSheet_3
+  - first:
+      213: -6400227603618011641
+    second: BulletImpactSpriteSheet_4
+  - first:
+      213: -8120539788922328952
+    second: BulletImpactSpriteSheet_5
+  - first:
+      213: -419680511231656043
+    second: BulletImpactSpriteSheet_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +69,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 48
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,177 +118,177 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RatWalker_0
+      name: BulletImpactSpriteSheet_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 512
-        width: 370
-        height: 512
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fb1adb42645071d60800000000000000
-      internalID: 7860757473420747199
+      spriteID: d5ed0339013572dc0800000000000000
+      internalID: -3663868441188573603
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RatWalker_1
+      name: BulletImpactSpriteSheet_1
       rect:
         serializedVersion: 2
-        x: 370
-        y: 512
-        width: 370
-        height: 512
+        x: 32
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 767f54541323cdb49835dc2f1c83d9dd
-      internalID: -1783257010
+      spriteID: e4af53f0013d7d180800000000000000
+      internalID: -9090565256895923634
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RatWalker_2
+      name: BulletImpactSpriteSheet_2
       rect:
         serializedVersion: 2
-        x: 741
-        y: 512
-        width: 370
-        height: 512
+        x: 64
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 926dfdfb7706b8c4fac1bf337f31de8b
-      internalID: 1109584550
+      spriteID: 89e01a7f82bc41c90800000000000000
+      internalID: -7199906527444922728
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RatWalker_3
+      name: BulletImpactSpriteSheet_3
       rect:
         serializedVersion: 2
-        x: 1110
-        y: 512
-        width: 370
-        height: 512
+        x: 0
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 3b57dfef58f947445a4b8a15b5635eee
-      internalID: 1829669080
+      spriteID: 821350a0fcc7659e0800000000000000
+      internalID: -1632980586207039192
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RatWalker_4
+      name: BulletImpactSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 706e2b487e2dd27a0800000000000000
+      internalID: -6400227603618011641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BulletImpactSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 888ebd0261c0e4f80800000000000000
+      internalID: -8120539788922328952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BulletImpactSpriteSheet_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 370
-        height: 512
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 206cdd098d36c354d9a1abdd35b035e1
-      internalID: 2029936968
+      spriteID: 59ff1e07ccefc2af0800000000000000
+      internalID: -419680511231656043
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RatWalker_5
+      name: BulletImpactSpriteSheet_7
       rect:
         serializedVersion: 2
-        x: 370
+        x: 32
         y: 0
-        width: 370
-        height: 512
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 144b5bec0f2885a499c4aaf8aefeb4e1
-      internalID: 28333034
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RatWalker_6
-      rect:
-        serializedVersion: 2
-        x: 740
-        y: 0
-        width: 370
-        height: 512
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 06456316473f56148bc5445397d92f25
-      internalID: 711202933
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RatWalker_7
-      rect:
-        serializedVersion: 2
-        x: 1110
-        y: 0
-        width: 370
-        height: 512
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1bcfa5b499cf7284b9d28b9f15ad7e9e
-      internalID: -1291841774
+      spriteID: 16981231183750240bd5b74a85181487
+      internalID: 479849604
       vertices: []
       indices: 
       edges: []
@@ -279,7 +297,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: cd4da5360fd1c3c40a9fc263559efbbf
+    spriteID: b9767a69caac26048a41da0a528d5b9c
     internalID: 0
     vertices: []
     indices: 
@@ -289,14 +307,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      RatWalker_0: 7860757473420747199
-      RatWalker_1: -1783257010
-      RatWalker_2: 1109584550
-      RatWalker_3: 1829669080
-      RatWalker_4: 2029936968
-      RatWalker_5: 28333034
-      RatWalker_6: 711202933
-      RatWalker_7: -1291841774
+      BulletImpactSpriteSheet_0: -3663868441188573603
+      BulletImpactSpriteSheet_1: -9090565256895923634
+      BulletImpactSpriteSheet_2: -7199906527444922728
+      BulletImpactSpriteSheet_3: -1632980586207039192
+      BulletImpactSpriteSheet_4: -6400227603618011641
+      BulletImpactSpriteSheet_5: -8120539788922328952
+      BulletImpactSpriteSheet_6: -419680511231656043
+      BulletImpactSpriteSheet_7: 479849604
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
